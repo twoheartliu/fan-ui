@@ -1,5 +1,5 @@
 <template>
-  <div>this is a new hello</div>
+  <div>第一个组件啊</div>
 </template>
 <script>
   export default {
