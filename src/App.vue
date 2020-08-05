@@ -5,8 +5,8 @@
 <script>
 export default {
   name: 'App',
-  components: {
-
+  setup() {
+    const asideVisible = false;
   }
 }
 </script>
