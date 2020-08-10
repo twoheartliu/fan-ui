@@ -33,7 +33,10 @@ export default {
   background: #acdae5;
   display: flex;
   padding: 16px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 10;
 
   > .logo {
