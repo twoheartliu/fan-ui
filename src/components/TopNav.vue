@@ -1,23 +1,26 @@
 <template>
   <div class="topNav">
-    <div class="logo">LOGO</div>
+    <router-link to="/" class="logo">
+      LOGO
+    </router-link>
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
     </ul>
-    <span class="toggleAside"  @click="toggleAside">
+    <span class="toggleAside" @click="toggleAside">
       <svg class="icon" aria-hidden="true">
-        <use xlink:href="#icon-menu" />
+        <use xlink:href="#icon-menu"/>
       </svg>
     </span>
   </div>
 </template>
 
 <script lang="ts">
-import { inject, Ref } from "vue";
+import {inject, Ref} from 'vue';
+
 export default {
   setup() {
-    const asideVisible = inject<Ref<boolean>>("asideVisible");
+    const asideVisible = inject<Ref<boolean>>('asideVisible');
     const toggleAside = () => {
       asideVisible.value = !asideVisible.value;
     };
@@ -65,9 +68,15 @@ export default {
   }
 
   @media screen and(max-width: 500px) {
-    > .menu{display: none;}
-    > .logo{margin: 0 auto;}
-    > .toggleAside{display: flex;}
+    > .menu {
+      display: none;
+    }
+    > .logo {
+      margin: 0 auto;
+    }
+    > .toggleAside {
+      display: flex;
+    }
   }
 }
 </style>

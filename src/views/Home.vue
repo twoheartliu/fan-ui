@@ -29,7 +29,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
   flex-direction: column;
   background: lightgreen;
   .actions {
