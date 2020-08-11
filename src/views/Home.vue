@@ -30,7 +30,7 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: lightgreen;
+  background: lightskyblue;
   .actions {
     padding: 8px 0;
     a {

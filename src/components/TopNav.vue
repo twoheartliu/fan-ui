@@ -1,7 +1,7 @@
 <template>
   <div class="topNav">
     <router-link to="/" class="logo">
-      LOGO
+      Fan UI
     </router-link>
     <ul class="menu">
       <li>菜单1</li>
@@ -33,7 +33,7 @@ export default {
 
 <style scoped lang="scss">
 .topNav {
-  background: #acdae5;
+  background: #fff;
   display: flex;
   padding: 16px;
   position: fixed;
@@ -45,6 +45,12 @@ export default {
   > .logo {
     min-width: 6em;
     margin-right: auto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 40px;
+    color: lightskyblue;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.95);
 
     &:hover {
       border: none;

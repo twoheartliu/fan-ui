@@ -75,17 +75,23 @@ export default {
 }
 
 aside {
-  background: lightcoral;
+  background: white;
   width: 150px;
   position: fixed;
   top: 0;
   left: 0;
   padding-top: 70px;
   height: 100%;
+  border-right: 1px solid #7777;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   > h2 {
     margin-bottom: 4px;
+    border-bottom: 1px solid #7777;
   }
-
   > ol {
     > li {
       padding: 4px 0;
