@@ -45,6 +45,10 @@ export default {
   > .logo {
     min-width: 6em;
     margin-right: auto;
+
+    &:hover {
+      border: none;
+    }
   }
 
   > .menu {
