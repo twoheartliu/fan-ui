@@ -1,5 +1,5 @@
 <template>
-  <button @click="toggle" :class="{checked: value, size: small}" :disabled="disabled">
+  <button class="fan-switch" @click="toggle" :class="{'fan-checked': value, size: small}" :disabled="disabled">
     <span></span>
   </button>
 </template>
@@ -21,10 +21,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-button {
+.fan-switch {
   height: $h;
   width: $h * 2;
   border: none;
@@ -43,7 +43,7 @@ button {
     transition: all 250ms;
   }
 
-  &.checked {
+  &.fan-checked {
     background: #1890ff;
 
     > span {
