@@ -1,5 +1,10 @@
 <template>
-  <button class="fan-button" :class="classes" :disable="disable">
+  <button
+      class="fan-button"
+      :class="classes"
+      :disable="disable"
+  >
+    <span v-if="loading" class="fan-loadingIndicator"></span>
     <slot/>
   </button>
 </template>
@@ -25,6 +30,10 @@ export default {
     disable: {
       type: Boolean,
       default: true
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
   },
   setup(props) {
@@ -178,6 +187,25 @@ $radius: 4px;
       color: $grey;
     }
   }
+  > .fan-loadingIndicator {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 8px;
+    border-color: $blue $blue $blue transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: fan-spin 1s infinite linear;
+  }
+}
 
+@keyframes fan-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>
