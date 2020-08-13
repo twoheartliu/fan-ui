@@ -1,5 +1,5 @@
 <template>
-  <button class="fan-button" :class="classes">
+  <button class="fan-button" :class="classes" :disable="disable">
     <slot/>
   </button>
 </template>
@@ -21,6 +21,10 @@ export default {
     level: {
       type: String,
       default: 'normal'
+    },
+    disable: {
+      type: Boolean,
+      default: true
     }
   },
   setup(props) {
@@ -43,6 +47,7 @@ $border-color: #d9d9d9;
 $color: #333;
 $blue: #40a9ff;
 $red: red;
+$grey: grey;
 $radius: 4px;
 .fan-button {
   box-sizing: border-box;
@@ -155,6 +160,22 @@ $radius: 4px;
       &:focus {
         color: darken($red, 10%);
       }
+    }
+  }
+
+  &.fan-theme-button {
+  &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+  &.fan-theme-link, &.fan-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
     }
   }
 
