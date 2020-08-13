@@ -55,9 +55,9 @@ $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
 $blue: #40a9ff;
+$radius: 4px;
 $red: red;
 $grey: grey;
-$radius: 4px;
 .fan-button {
   box-sizing: border-box;
   height: $h;
@@ -67,63 +67,55 @@ $radius: 4px;
   justify-content: center;
   align-items: center;
   white-space: nowrap;
-  background: #fff;
+  background: white;
   color: $color;
   border: 1px solid $border-color;
   border-radius: $radius;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
   transition: background 250ms;
-
+  vertical-align: middle;
   & + & {
     margin-left: 8px;
   }
-
   &:hover,
   &:focus {
     color: $blue;
     border-color: $blue;
   }
-
   &:focus {
     outline: none;
   }
-
   &::-moz-focus-inner {
     border: 0;
   }
-
   &.fan-theme-link {
     border-color: transparent;
     box-shadow: none;
     color: $blue;
-
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: lighten($blue, 10%);
     }
   }
-
   &.fan-theme-text {
     border-color: transparent;
     box-shadow: none;
     color: inherit;
-
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background: darken(white, 5%);
     }
   }
-
   &.fan-size-big {
     font-size: 24px;
     height: 48px;
     padding: 0 16px;
   }
-
   &.fan-size-small {
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
   }
-
   &.fan-theme-button {
     &.fan-level-main {
       background: $blue;
@@ -171,9 +163,8 @@ $radius: 4px;
       }
     }
   }
-
   &.fan-theme-button {
-  &[disabled] {
+    &[disabled] {
       cursor: not-allowed;
       color: $grey;
       &:hover {
@@ -187,7 +178,7 @@ $radius: 4px;
       color: $grey;
     }
   }
-  > .fan-loadingIndicator {
+  > .fan-loadingIndicator{
     width: 14px;
     height: 14px;
     display: inline-block;
@@ -199,13 +190,8 @@ $radius: 4px;
     animation: fan-spin 1s infinite linear;
   }
 }
-
 @keyframes fan-spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0%{transform: rotate(0deg)}
+  100%{transform: rotate(360deg)}
 }
 </style>

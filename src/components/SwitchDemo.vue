@@ -29,6 +29,7 @@
 <script lang="ts">
 import {ref} from 'vue';
 import Switch from '../lib/Switch.vue';
+import './demo.scss';
 
 export default {
   name: 'SwitchDemo',
@@ -44,25 +45,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-h1 {
-  font-size: 30px;
-}
-p {
-  margin: 10px 0;
-}
 
-section {
-  margin: 10px 0;
-  h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  li {
-    &::before {
-      display: inline-block;
-      content: '*';
-      padding-right: 10px;
-    }
-  }
-}
 </style>
