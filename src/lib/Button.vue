@@ -2,7 +2,6 @@
   <button
       class="fan-button"
       :class="classes"
-      :disable="disable"
   >
     <span v-if="loading" class="fan-loadingIndicator"></span>
     <slot/>
@@ -26,10 +25,6 @@ export default {
     level: {
       type: String,
       default: 'normal'
-    },
-    disable: {
-      type: Boolean,
-      default: true
     },
     loading: {
       type: Boolean,
@@ -74,6 +69,7 @@ $grey: grey;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
   transition: background 250ms;
   vertical-align: middle;
+  font-size: 14px;
   & + & {
     margin-left: 8px;
   }
