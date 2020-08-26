@@ -3,8 +3,6 @@
     <h2>代码演示</h2>
     <section>
       <h2>示例1</h2>
-      <Button @click="toggle">点击显示 Dialog</Button>
-      <Dialog v-model:visible="x"/>
       <Button @click="toggle">点击显示 Dialog 并且点击遮罩不关闭</Button>
       <Dialog v-model:visible="x" :closeOnClickOverlay="false"/>
     </section>

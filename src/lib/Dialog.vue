@@ -21,33 +21,33 @@
 </template>
 
 <script lang="ts">
-import Button from './Button.vue';
+import Button from "./Button.vue";
 export default {
-  name: 'Dialog',
+  name: "Dialog",
   props: {
     visible: {
       type: Boolean,
-      default: false
+      default: false,
     },
     closeOnClickOverlay: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   components: {
-    Button
+    Button,
   },
   setup(props, context) {
     const close = () => {
-      context.emit('update:visible', false);
-    }
+      context.emit("update:visible", false);
+    };
     const onClickOverlay = () => {
       if (props.closeOnClickOverlay) {
-        close()
+        close();
       }
-    }
-    return {close, onClickOverlay}
-  }
+    };
+    return { close, onClickOverlay };
+  },
 };
 </script>
 
@@ -96,7 +96,7 @@ $border-color: #d9d9d9;
     padding: 12px 16px;
     text-align: right;
   }
-  
+
   &-close {
     position: relative;
     display: inline-block;
@@ -106,7 +106,7 @@ $border-color: #d9d9d9;
 
     &::before,
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       height: 1px;
       background: #000;
