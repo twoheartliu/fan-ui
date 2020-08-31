@@ -4,7 +4,7 @@
     <section>
       <h2>示例1</h2>
       <Button @click="toggle">点击显示 Dialog 并且点击遮罩不关闭</Button>
-      <Dialog v-model:visible="x" :closeOnClickOverlay="false"/>
+      <Dialog v-model:visible="x" :closeOnClickOverlay="false" :ok="clickOk" :cancel="clickCancel"/>
     </section>
     </section>
 </template>
@@ -24,7 +24,11 @@ export default {
     const toggle = () => {
       x.value = !x.value;
     }
-    return {x, toggle};
+    const clickOk = () => {
+      return false;
+    }
+    const clickCancel = () => {}
+    return {x, toggle, clickOk, clickCancel};
   }
 }
 </script>
