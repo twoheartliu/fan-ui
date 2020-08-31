@@ -4,7 +4,15 @@
     <section>
       <h2>示例1</h2>
       <Button @click="toggle">点击显示 Dialog 并且点击遮罩不关闭</Button>
-      <Dialog v-model:visible="x" :closeOnClickOverlay="false" :ok="clickOk" :cancel="clickCancel"/>
+      <Dialog v-model:visible="x" :closeOnClickOverlay="false" :ok="clickOk" :cancel="clickCancel">
+        <template v-slot:title >
+          <strong>加粗的标题</strong>
+        </template>
+        <template v-slot:content >
+          <div>title</div>
+          <div>你好</div>
+        </template>
+      </Dialog>
     </section>
     </section>
 </template>
