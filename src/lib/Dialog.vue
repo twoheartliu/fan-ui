@@ -1,5 +1,6 @@
 <template>
   <template v-if="visible">
+    <teleport to="body">
     <div class="fan-dialog-overlay" @click="onClickOverlay"></div>
     <div class="fan-dialog-wrapper">
       <div class="fan-dialog">
@@ -16,6 +17,7 @@
         </footer>
       </div>
     </div>
+    </teleport>
   </template>
 </template>
 
