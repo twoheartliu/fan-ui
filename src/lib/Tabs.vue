@@ -1,19 +1,36 @@
 <template>
   <div class="fan-tabs">
     <div class="fan-tabs-nav">
-      <div class="fan-tabs-nav-item" v-for="(t, index) in titles" :key="index">{{ t }}</div>
+      <div
+          class="fan-tabs-nav-item"
+          @click="select(t)"
+          v-for="(t, index) in titles"
+          :class="{selected: t === selected}"
+          :key="index">
+        {{ t }}
+      </div>
     </div>
     <div class="fan-tabs-content">
-      <component class="fan-tabs-content-item" v-for="(c, index) in defaults" :is="c" :key="index"/>
+      <component
+          class="fan-tabs-content-item"
+          :is="current"
+          :key="selected"
+      />
     </div>
   </div>
 </template>
 
 <script lang="ts">
+import {computed} from 'vue';
 import Tab from './Tab.vue';
 
 export default {
   name: 'Tabs',
+  props: {
+    selected: {
+      type: String
+    }
+  },
   setup(props, context) {
     // 虚拟节点 VNode
     const defaults = context.slots.default();
@@ -24,10 +41,22 @@ export default {
         throw new Error('Tabs 子标签必须是 Tab');
       }
     });
+
+    const current = (c) => {
+      return defaults.filter((tag) => {
+        return tag.props.title === props.selected
+      })[0]
+    };
+
     const titles = defaults.map((tag) => {
       return tag.props.title;
     });
-    return {defaults, titles};
+
+    const select = (title: string) => {
+      context.emit('update:selected', title);
+    };
+
+    return {defaults, titles, current, select};
   }
 };
 </script>
@@ -53,7 +82,7 @@ $border-color: #d9d9d9;
       }
 
       &.selected {
-        color: $color;
+        color: $blue;
       }
     }
   }
