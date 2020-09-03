@@ -1,15 +1,12 @@
 <template>
-  <button
-      class="fan-button"
-      :class="classes"
-  >
+  <button class="fan-button" :class="classes">
     <span v-if="loading" class="fan-loadingIndicator"></span>
-    <slot/>
+    <slot />
   </button>
 </template>
 
 <script lang="ts">
-import {computed} from 'vue';
+import { computed } from 'vue'
 
 export default {
   name: 'Button',
@@ -32,17 +29,17 @@ export default {
     }
   },
   setup(props) {
-    const {theme, size, level} = props;
+    const { theme, size, level } = props
     const classes = computed(() => {
       return {
         [`fan-theme-${theme}`]: theme,
         [`fan-size-${size}`]: size,
-        [`fan-level-${level}`]: level,
-      };
-    });
-    return {classes};
+        [`fan-level-${level}`]: level
+      }
+    })
+    return { classes }
   }
-};
+}
 </script>
 
 <style lang="scss">
@@ -168,13 +165,14 @@ $grey: grey;
       }
     }
   }
-  &.fan-theme-link, &.fan-theme-text {
+  &.fan-theme-link,
+  &.fan-theme-text {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
     }
   }
-  > .fan-loadingIndicator{
+  > .fan-loadingIndicator {
     width: 14px;
     height: 14px;
     display: inline-block;
@@ -187,7 +185,11 @@ $grey: grey;
   }
 }
 @keyframes fan-spin {
-  0%{transform: rotate(0deg)}
-  100%{transform: rotate(360deg)}
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>

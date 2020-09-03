@@ -1,9 +1,9 @@
 <template>
   <button
-      class="fan-switch"
-      @click="toggle"
-      :class="classes"
-      :loading="loading"
+    class="fan-switch"
+    @click="toggle"
+    :class="classes"
+    :loading="loading"
   >
     <span>
       <span v-if="loading" class="fan-loadingIndicator"></span>
@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-import {computed} from 'vue';
+import { computed } from 'vue'
 
 export default {
   name: 'Switch',
@@ -28,19 +28,19 @@ export default {
     }
   },
   setup(props, context) {
-    const {size} = props;
+    const { size } = props
     const toggle = () => {
-      context.emit('update:value', !props.value);
-    };
+      context.emit('update:value', !props.value)
+    }
     const classes = computed(() => {
       return {
         [`fan-size-${size}`]: size,
         'fan-checked': props.value
-      };
-    });
-    return {toggle, classes};
+      }
+    })
+    return { toggle, classes }
   }
-};
+}
 </script>
 
 <style lang="scss">
@@ -136,10 +136,10 @@ $grey: grey;
 
   &[disabled] {
     cursor: not-allowed;
-    background: #AFD4FF;
+    background: #afd4ff;
   }
 
-  &[loading=true] {
+  &[loading='true'] {
     cursor: not-allowed;
     &.fan-checked {
       .fan-loadingIndicator {
@@ -164,7 +164,11 @@ $grey: grey;
   }
 }
 @keyframes fan-spin {
-  0%{transform: rotate(0deg)}
-  100%{transform: rotate(360deg)}
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 </style>
