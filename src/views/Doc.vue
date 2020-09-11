@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <TopNav class="nav"/>
+    <TopNav toggle-menu-button-visible class="nav"/>
     <div class="content">
       <aside v-if="asideVisible">
         <h2>组件列表</h2>
@@ -75,19 +75,13 @@ export default {
 }
 
 aside {
-  background: white;
+  background: rgb(172,218,229);
   width: 150px;
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 70px;
+  padding: 70px 16px 16px;
   height: 100%;
-  border-right: 1px solid #7777;
-  z-index: 9;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
   > h2 {
     margin-bottom: 4px;
     border-bottom: 1px solid #7777;

@@ -52,13 +52,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$green: #02bcb0;
+$button: #27c5fd;
 $border-radius: 4px;
+//$color: #0066cc;
 $color: #007974;
 
 .navAndBanner {
-  background: rgb(227, 255, 253);
-  background: linear-gradient(145deg, rgba(227, 255, 253, 1) 0%, rgba(183, 233, 230, 1) 100%);
+  background: rgb(172,218,229);
+  background: linear-gradient(144deg, rgba(172,218,229,1) 0%, rgba(146,223,241,1) 100%);
   clip-path: ellipse(80% 60% at 50% 40%);
 }
 
@@ -121,7 +122,7 @@ $color: #007974;
 
     a {
       margin: 0 8px;
-      background: $green;
+      background: $button;
       color: white;
       display: inline-block;
       padding: 8px 24px;

@@ -4,14 +4,16 @@
       <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-fan"/>
       </svg>
-      Fan UI
+      <div class="font">
+        Fan UI
+      </div>
     </router-link>
     <ul class="menu">
       <li>
         <router-link to="/doc">文档</router-link>
       </li>
     </ul>
-    <span class="toggleAside" @click="toggleAside">
+    <span v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleAside">
       <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-menu"/>
       </svg>
@@ -23,6 +25,12 @@
 import {inject, Ref} from 'vue';
 
 export default {
+  props:  {
+    toggleMenuButtonVisible: {
+      type: Boolean,
+      default: false
+    }
+  },
   setup() {
     const asideVisible = inject<Ref<boolean>>('asideVisible');
     const toggleAside = () => {
@@ -55,6 +63,7 @@ $color: #007974;
     font-weight: normal;
     font-size: 24px;
     line-height: 40px;
+    display: flex;
     > svg {
       width: 32px;
       height: 32px;
