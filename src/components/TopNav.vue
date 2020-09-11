@@ -4,10 +4,12 @@
       <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-fan"/>
       </svg>
+      Fan UI
     </router-link>
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <li>
+        <router-link to="/doc">文档</router-link>
+      </li>
     </ul>
     <span class="toggleAside" @click="toggleAside">
       <svg class="icon" aria-hidden="true">
@@ -53,8 +55,6 @@ $color: #007974;
     font-weight: normal;
     font-size: 24px;
     line-height: 40px;
-    color: lightskyblue;
-    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.95);
     > svg {
       width: 32px;
       height: 32px;
