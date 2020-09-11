@@ -1,7 +1,9 @@
 <template>
   <div class="topNav">
     <router-link to="/" class="logo">
-      Fan UI
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-fan"/>
+      </svg>
     </router-link>
     <ul class="menu">
       <li>菜单1</li>
@@ -53,6 +55,10 @@ $color: #007974;
     line-height: 40px;
     color: lightskyblue;
     text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.95);
+    > svg {
+      width: 32px;
+      height: 32px;
+    }
 
     &:hover {
       border: none;
