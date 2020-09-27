@@ -25,7 +25,7 @@
 import {inject, Ref} from 'vue';
 
 export default {
-  props:  {
+  props: {
     toggleMenuButtonVisible: {
       type: Boolean,
       default: false
@@ -64,6 +64,8 @@ $color: #007974;
     font-size: 24px;
     line-height: 40px;
     display: flex;
+    justify-content: flex-start;
+
     > svg {
       width: 32px;
       height: 32px;
@@ -95,11 +97,12 @@ $color: #007974;
   }
 
   @media screen and(max-width: 500px) {
-    > .menu {
+    .menu {
       display: none;
     }
-    > .logo {
+    .logo {
       margin: 0 auto;
+      justify-content: center;
     }
     > .toggleAside {
       display: flex;
