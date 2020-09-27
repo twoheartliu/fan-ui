@@ -118,6 +118,7 @@ aside {
 
         &.router-link-active {
           background: #fff;
+          color: #007974;
         }
       }
     }
