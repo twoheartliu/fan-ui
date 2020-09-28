@@ -10,7 +10,7 @@
     </router-link>
     <ul class="menu">
       <li>
-        <router-link to="/doc">文档</router-link>
+        <router-link to="/doc/intro">文档</router-link>
       </li>
     </ul>
     <span v-if="toggleMenuButtonVisible" class="toggleAside" @click="toggleAside">
@@ -54,7 +54,7 @@ $color: #007974;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 20;
 
   > .logo {
     min-width: 6em;

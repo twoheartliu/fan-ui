@@ -56,45 +56,49 @@ $button: #27c5fd;
 $border-radius: 4px;
 //$color: #0066cc;
 $color: #007974;
+$bgBlue1: rgba(172,218,229);
+$bgBlue2: rgba(146,223,241);
 
 .navAndBanner {
-  background: rgb(172,218,229);
-  background: linear-gradient(144deg, rgba(172,218,229,1) 0%, rgba(146,223,241,1) 100%);
+  background: linear-gradient(145deg, $bgBlue1 0%, $bgBlue2 100%);
   clip-path: ellipse(80% 60% at 50% 40%);
 }
-
 .features {
   margin: 64px auto;
-  width: 400px;
+  padding: 0 16px;
   @media (min-width: 800px) {
     width: 800px;
+    >ul {
+      >li {
+        width: 50%;
+      }
+    }
   }
   @media (min-width: 1200px) {
     width: 1200px;
+    >ul {
+      >li {
+        width: 33.3333%;
+      }
+    }
   }
   >ul {
     display: flex;
     flex-wrap: wrap;
     >li {
-      width: 400px;
-      margin: 12px 0;
+      margin: 16px 0;
       display: grid;
       justify-content: start;
       align-content: space-between;
       grid-template-areas:
         "icon title"
         "icon text";
-      grid-template-columns: 90px auto;
+      grid-template-columns: 80px auto;
       grid-template-rows: 1fr auto;
-      position: relative;
-      > svg {
+      >svg {
         grid-area: icon;
-        width: 70px;
-        height: 70px;
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translateX(-50%) translateY(-50%);
+        width: 64px;
+        height: 64px;
       }
       >h3 {
         grid-area: title;
@@ -106,7 +110,6 @@ $color: #007974;
     }
   }
 }
-
 .banner {
   color: $color;
   padding: 100px 0;
@@ -114,10 +117,8 @@ $color: #007974;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  .actions {
+  >.actions {
     padding: 8px 0;
-
     a {
       margin: 0 8px;
       background: $button;
@@ -125,7 +126,6 @@ $color: #007974;
       display: inline-block;
       padding: 8px 24px;
       border-radius: $border-radius;
-
       &:hover {
         text-decoration: none;
       }
